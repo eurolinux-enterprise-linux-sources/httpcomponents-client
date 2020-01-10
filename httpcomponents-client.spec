@@ -3,7 +3,7 @@
 Name:              httpcomponents-client
 Summary:           HTTP agent implementation based on httpcomponents HttpCore
 Version:           4.2.5
-Release:           3%{?dist}
+Release:           4%{?dist}
 Group:             Development/Libraries
 License:           ASL 2.0
 URL:               http://hc.apache.org/
@@ -122,6 +122,9 @@ done
 %doc LICENSE.txt NOTICE.txt
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 4.2.5-4
+- Mass rebuild 2013-12-27
+
 * Fri Jun 28 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 4.2.5-3
 - Rebuild to regenerate API documentation
 - Resolves: CVE-2013-1571
