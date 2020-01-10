@@ -3,11 +3,12 @@
 Name:              httpcomponents-client
 Summary:           HTTP agent implementation based on httpcomponents HttpCore
 Version:           4.2.5
-Release:           4%{?dist}
+Release:           5%{?dist}
 Group:             Development/Libraries
 License:           ASL 2.0
 URL:               http://hc.apache.org/
 Source0:           http://archive.apache.org/dist/httpcomponents/httpclient/source/%{name}-%{version}-src.tar.gz
+Patch0:            0001-Fix-CVE-2014-3577.patch
 
 BuildArch:         noarch
 
@@ -40,6 +41,8 @@ Group:          Documentation
 
 %prep
 %setup -q
+
+%patch0 -p1
 
 # Remove optional build deps not available in Fedora
 %pom_disable_module httpclient-cache
@@ -122,6 +125,10 @@ done
 %doc LICENSE.txt NOTICE.txt
 
 %changelog
+* Tue Aug 12 2014 Michal Srb <msrb@redhat.com> - 4.2.5-5
+- Fix MITM security vulnerability
+- Resolves: CVE-2014-3577
+
 * Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 4.2.5-4
 - Mass rebuild 2013-12-27
 
